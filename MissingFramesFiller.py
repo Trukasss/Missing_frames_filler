@@ -1,5 +1,5 @@
 
-import re
+from re import search
 from pathlib import Path
 from shutil import copyfile
 import tkinter as tk
@@ -12,7 +12,7 @@ from os import PathLike
 ##########################################
 
 def split_last_digits(string:str):
-    match = re.search(r"^(.*?)(\d+)$", string)
+    match = search(r"^(.*?)(\d+)$", string)
     if not match:
         raise ValueError(f"Files name should have number at the end '{string}'")
     digitless = match.group(1)
